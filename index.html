@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Denni’s Cabinets | Luxury Custom Cabinetry Atlanta</title>
     
-    <!-- Premium Typography & Icons -->
+    <!-- Premium Assets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,157 +19,117 @@
             --light-gray: #f9fafb;
             --border: rgba(0, 0, 0, 0.08);
             --glass: rgba(255, 255, 255, 0.85);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* Prevent Horizontal Scroll */
-        html, body { 
-            overflow-x: hidden; 
-            width: 100%;
-            margin: 0; padding: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
-        }
-
+        /* Essential Reset & Anti-Horizontal Scroll */
+        html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
         * { box-sizing: border-box; }
 
         /* --- Navigation --- */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 2000;
+            position: fixed; top: 0; width: 100%; z-index: 3000;
             background: var(--glass); backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
         .nav-container {
             max-width: 1400px; margin: 0 auto; display: flex;
-            justify-content: space-between; align-items: center; padding: 15px 24px;
+            justify-content: space-between; align-items: center; padding: 18px 24px;
         }
-        .logo img { height: 32px; width: auto; display: block; }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -1px; text-decoration: none; color: var(--text); }
+        .logo span { color: var(--accent); }
         
         .nav-links { display: flex; gap: 40px; }
-        .nav-links a {
-            text-decoration: none; color: var(--text); font-weight: 500;
-            font-size: 0.85rem; transition: 0.3s;
-        }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.85rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
         /* --- Hero --- */
         .hero {
-            height: 100vh; width: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/hero.jpg') center/cover no-repeat;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-            padding: 0 24px;
+            height: 95vh; width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556912177-f5c7c1b4b89a?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 24px;
         }
         .hero-content { max-width: 900px; }
-        .hero h1 { 
-            font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 700; 
-            line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 32px; 
-        }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 32px; }
         
         .btn {
-            display: inline-block; padding: 20px 40px; border-radius: 6px;
-            font-weight: 600; text-decoration: none; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer; border: none;
+            display: inline-block; padding: 22px 48px; border-radius: 4px;
+            font-weight: 600; text-decoration: none; transition: var(--transition);
+            cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
         }
         .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 30px rgba(254, 44, 12, 0.3); 
-        }
+        .btn-primary:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(254, 44, 12, 0.4); }
 
-        /* --- Global Sections --- */
+        /* --- Sections --- */
         section { padding: 120px 24px; max-width: 1400px; margin: 0 auto; }
-        .section-tag { 
-            color: var(--accent); font-weight: 700; text-transform: uppercase; 
-            font-size: 0.75rem; letter-spacing: 0.15em; margin-bottom: 16px; display: block; 
-        }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 40px; line-height: 1.1; }
+        .section-tag { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.2em; margin-bottom: 16px; display: block; }
+        h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: -0.04em; margin-bottom: 40px; line-height: 1.1; font-weight: 700; }
 
-        /* --- Portfolio Gallery --- */
-        .portfolio-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-        }
-        .portfolio-item { 
-            position: relative; overflow: hidden; border-radius: 12px; height: 500px; 
-            background: var(--light-gray);
-        }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s transform; }
-        .portfolio-item:hover img { transform: scale(1.05); }
+        /* --- Portfolio (Hierarchy: Work First) --- */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .portfolio-item { position: relative; overflow: hidden; border-radius: 4px; height: 600px; background: var(--light-gray); }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .portfolio-item:hover img { transform: scale(1.08); }
 
-        /* --- About Section --- */
-        .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .about-text p { font-size: 1.15rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
-        .about-img { width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover; }
-
-        /* --- Collections --- */
-        .collections-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
-        }
-        .sample-card { border-radius: 8px; overflow: hidden; background: var(--light-gray); }
+        /* --- Collections (Fixed 3-Column Grid) --- */
+        .collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+        .sample-card { border-radius: 4px; overflow: hidden; background: var(--light-gray); text-align: center; }
         .sample-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
-        .sample-info { padding: 20px; border-top: 1px solid var(--border); }
-        .sample-info h4 { font-size: 1rem; font-weight: 600; }
+        .sample-info { padding: 24px; background: white; }
+        .sample-info h4 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        #extra-samples { display: none; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
-        
-        .toggle-container { display: flex; justify-content: center; margin-top: 50px; }
-        .btn-outline { 
-            background: transparent; border: 1px solid var(--text); color: var(--text); 
-            width: auto; min-width: 200px; text-align: center;
-        }
+        #extra-samples { display: none; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .toggle-container { display: flex; justify-content: center; margin-top: 60px; }
+        .btn-outline { background: transparent; border: 1px solid var(--text); color: var(--text); padding: 18px 40px; width: auto; }
+        .btn-outline:hover { background: var(--text); color: white; }
+
+        /* --- About --- */
+        .about-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 100px; align-items: center; }
+        .about-text p { font-size: 1.2rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; font-weight: 300; }
+        .about-img { width: 100%; border-radius: 4px; aspect-ratio: 4/5; object-fit: cover; box-shadow: 40px 40px 0px var(--light-gray); }
 
         /* --- Testimonials --- */
-        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .review-card { 
-            padding: 40px; border: 1px solid var(--border); border-radius: 12px; 
-            background: #fff; transition: 0.3s;
-        }
-        .review-card:hover { border-color: var(--accent); }
-        .stars { color: #facc15; margin-bottom: 20px; font-size: 0.8rem; }
-        .review-card p { font-style: italic; color: var(--muted); margin-bottom: 30px; }
-        .client { display: flex; align-items: center; gap: 16px; }
-        .client img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-        .client h5 { font-size: 0.9rem; font-weight: 700; margin: 0; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .review-card { padding: 48px; border: 1px solid var(--border); border-radius: 4px; background: #fff; transition: var(--transition); }
+        .review-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .stars { color: #facc15; margin-bottom: 24px; font-size: 0.8rem; }
+        .review-card p { color: var(--text); font-size: 1rem; line-height: 1.6; margin-bottom: 32px; font-weight: 400; }
+        .client { display: flex; align-items: center; gap: 16px; border-top: 1px solid var(--border); padding-top: 24px; }
+        .client img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .client h5 { font-size: 0.95rem; font-weight: 700; margin: 0; }
+        .client span { font-size: 0.8rem; color: var(--muted); }
 
         /* --- Contact --- */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
-        .form-input { 
-            width: 100%; padding: 16px 0; border: none; border-bottom: 1.5px solid var(--border); 
-            font-size: 1rem; margin-bottom: 32px; outline: none; transition: 0.3s;
-        }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; }
+        .form-input { width: 100%; padding: 20px 0; border: none; border-bottom: 1px solid var(--border); font-size: 1rem; margin-bottom: 40px; outline: none; transition: 0.3s; background: transparent; }
         .form-input:focus { border-bottom-color: var(--accent); }
+        label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
 
         /* --- Footer --- */
-        footer { padding: 80px 24px; border-top: 1px solid var(--border); }
-        .footer-content { 
-            max-width: 1400px; margin: 0 auto; display: flex; 
-            justify-content: space-between; align-items: center; 
-        }
+        footer { padding: 100px 24px; border-top: 1px solid var(--border); background: var(--light-gray); }
+        .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .socials a { color: var(--text); font-size: 1.4rem; margin-left: 24px; transition: 0.3s; }
+        .socials a:hover { color: var(--accent); }
 
         /* --- WhatsApp --- */
-        .wa-link {
-            position: fixed; bottom: 30px; right: 30px; 
-            background: #25d366; color: white; width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 3000; font-size: 1.8rem;
-            transition: 0.3s;
-        }
-        .wa-link:hover { transform: scale(1.1); }
+        .wa-link { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); z-index: 4000; font-size: 2rem; transition: var(--transition); }
+        .wa-link:hover { transform: scale(1.1) rotate(10deg); }
 
         /* --- Mobile Responsiveness --- */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .about-wrap, .contact-grid, .reviews-grid, .portfolio-grid { grid-template-columns: 1fr; gap: 40px; }
-            .portfolio-item { height: 350px; }
-            .btn-outline { width: 100%; }
+            .about-wrap, .contact-grid, .reviews-grid, .portfolio-grid, .collections-grid, #extra-samples { grid-template-columns: 1fr; gap: 48px; }
+            .portfolio-item { height: 450px; }
+            .about-img { box-shadow: none; }
             .nav-links.active {
-                display: flex; flex-direction: column; position: absolute; top: 60px; left: 0;
-                width: 100%; background: white; padding: 40px; border-bottom: 1px solid var(--border);
-                gap: 24px;
+                display: flex; flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: white; padding: 60px 24px; gap: 32px; text-align: center; border-bottom: 1px solid var(--border);
             }
+            .nav-links.active a { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -177,9 +137,9 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo"><img src="images/logo.png" alt="Dennis Cabinets Logo"></a>
+            <a href="#" class="logo">DENNI'S <span>CABINETS</span></a>
             <div class="nav-links" id="navLinks">
-                <a href="#portfolio" onclick="toggleMenu()">Work</a>
+                <a href="#portfolio" onclick="toggleMenu()">The Work</a>
                 <a href="#collections" onclick="toggleMenu()">Finishes</a>
                 <a href="#about" onclick="toggleMenu()">Our Story</a>
                 <a href="#contact" onclick="toggleMenu()">Inquire</a>
@@ -190,86 +150,77 @@
 
     <section class="hero">
         <div class="hero-content" data-aos="fade-up">
-            <h1>Elevating Atlanta’s <br><span style="color:var(--accent)">Finest Interiors.</span></h1>
-            <a href="#contact" class="btn btn-primary">Start a Project</a>
+            <h1>Artistry in Every <br><span style="color:var(--accent)">Cabinet.</span></h1>
+            <a href="#contact" class="btn btn-primary">Book a Consultation</a>
         </div>
     </section>
 
-    <!-- Portfolio First (Show, don't tell) -->
     <section id="portfolio">
-        <span class="section-tag">Featured Projects</span>
-        <h2>Masterpiece Installations</h2>
+        <span class="section-tag">Showcase</span>
+        <h2>Recent Transformations</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item" data-aos="fade-up">
-                <img src="images/project-1.jpg" alt="Custom Modern Kitchen">
-            </div>
-            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="images/project-2.jpg" alt="Traditional Cabinetry">
-            </div>
-            <div class="portfolio-item" data-aos="fade-up">
-                <img src="images/project-3.jpg" alt="Luxury Bathroom Vanity">
-            </div>
-            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="images/project-4.jpg" alt="Custom Walk-in Closet">
-            </div>
+            <div class="portfolio-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=1974" alt="Luxury Kitchen"></div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2070" alt="Dark Wood Cabinetry"></div>
+            <div class="portfolio-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1556186676-503a03353974?auto=format&fit=crop&q=80&w=2070" alt="Modern Bathroom"></div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1620627812632-457bae824971?auto=format&fit=crop&q=80&w=2070" alt="Minimalist Vanity"></div>
         </div>
     </section>
 
     <section id="collections">
-        <span class="section-tag">Materials</span>
-        <h2>The Series Collections</h2>
+        <span class="section-tag">The Library</span>
+        <h2>Series & Finishes</h2>
         <div class="collections-grid">
-            <div class="sample-card"><img src="images/sample-1.jpg"><div class="sample-info"><h4>Natural White Oak</h4></div></div>
-            <div class="sample-card"><img src="images/sample-2.jpg"><div class="sample-info"><h4>Matte Midnight</h4></div></div>
-            <div class="sample-card"><img src="images/sample-3.jpg"><div class="sample-info"><h4>Modern Alabaster</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Natural White Oak</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Matte Midnight</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Modern Alabaster</h4></div></div>
         </div>
         <div id="extra-samples">
-            <div class="sample-card"><img src="images/sample-4.jpg"><div class="sample-info"><h4>Walnut Select</h4></div></div>
-            <div class="sample-card"><img src="images/sample-5.jpg"><div class="sample-info"><h4>Sage Contemporary</h4></div></div>
-            <div class="sample-card"><img src="images/sample-6.jpg"><div class="sample-info"><h4>Smoke Grey</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Walnut Select</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Midnight Navy</h4></div></div>
+            <div class="sample-card"><img src="https://images.unsplash.com/photo-1615873968403-89e068628260?auto=format&fit=crop&q=80&w=800"><div class="sample-info"><h4>Sage Green</h4></div></div>
         </div>
         <div class="toggle-container">
-            <button class="btn btn-outline" id="toggleBtn" onclick="toggleLibrary()">Browse Full Library</button>
+            <button class="btn btn-outline" id="toggleBtn" onclick="toggleLibrary()">View Full Collection</button>
         </div>
     </section>
 
     <section id="about">
         <div class="about-wrap">
             <div class="about-text" data-aos="fade-right">
-                <span class="section-tag">Since 2008</span>
-                <h2>The Visionary Behind the Craft.</h2>
-                <p>Dennis Umanzor, founder of Denni’s Cabinets LLC, brings over 20 years of technical mastery to the Atlanta area. We don't just build storage; we engineer focal points for the home.</p>
-                <p>Based in Norcross, our studio blends traditional carpentry with modern design software to help you visualize your dream space before a single piece of wood is cut.</p>
+                <span class="section-tag">The Master Craftsman</span>
+                <h2>20 Years of Precision.</h2>
+                <p>Dennis Umanzor has been redefining Atlanta’s homes since 2008. Combining traditional European techniques with contemporary design aesthetics, every piece of cabinetry is built to be a legacy.</p>
+                <p>From our Norcross studio, we guide you through a specialized visualization process—ensuring your dream kitchen is perfectly engineered before the first cut is made.</p>
             </div>
-            <img src="images/dennis-portrait.jpg" class="about-img" data-aos="fade-left" alt="Dennis Umanzor">
+            <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&q=80&w=1000" class="about-img" data-aos="fade-left" alt="Dennis Umanzor">
         </div>
     </section>
 
     <section id="reviews">
-        <span class="section-tag">Social Proof</span>
-        <h2>Trusted by Atlanta Homeowners</h2>
+        <span class="section-tag">Client Voices</span>
+        <h2>Excellence in Atlanta</h2>
         <div class="reviews-grid">
-            <div class="review-card" data-aos="zoom-in">
+            <div class="review-card" data-aos="fade-up">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Dennis turned our 1990s kitchen into a modern masterpiece. The 1px precision on the cabinet gaps is incredible."</p>
+                <p>"Dennis transformed our 90s kitchen into a modern masterpiece. The attention to detail is world-class."</p>
                 <div class="client">
-                    <img src="images/client-1.jpg" alt="Reviewer">
-                    <div><h5>Mark Richardson</h5><span>Buckhead, GA</span></div>
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Client">
+                    <div><h5>Sarah Jenkins</h5><span>Buckhead, GA</span></div>
                 </div>
             </div>
-            <div class="review-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="review-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Professional, clean, and delivered exactly what we visualized. Best cabinet maker in Norcross."</p>
+                <p>"Best cabinet maker in Norcross. Truly professional, clean, and the craftsmanship is unmatched."</p>
                 <div class="client">
-                    <img src="images/client-2.jpg" alt="Reviewer">
-                    <div><h5>Sarah Jenkins</h5><span>Alpharetta, GA</span></div>
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="Client">
+                    <div><h5>Mark Richardson</h5><span>Alpharetta, GA</span></div>
                 </div>
             </div>
-            <div class="review-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="review-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"The walnut finish they suggested is the talk of the neighborhood. Absolute artists."</p>
+                <p>"Visualizing the project beforehand made such a difference. The final walnut finish is breathtaking."</p>
                 <div class="client">
-                    <img src="images/client-3.jpg" alt="Reviewer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Client">
                     <div><h5>David Chen</h5><span>Atlanta, GA</span></div>
                 </div>
             </div>
@@ -279,25 +230,28 @@
     <section id="contact">
         <div class="contact-grid">
             <div>
-                <span class="section-tag">Get Started</span>
-                <h2>Inquire About Your Project.</h2>
-                <p>Located in Norcross, serving Greater Atlanta. We respond to all inquiries within 24 hours.</p>
+                <span class="section-tag">Contact</span>
+                <h2>Start your story.</h2>
+                <p>Located in Norcross, GA. Serving the Greater Atlanta Area. Inquire below for a personal project consultation.</p>
             </div>
-            <form data-aos="fade-up">
-                <input type="text" class="form-input" placeholder="Name" required>
-                <input type="email" class="form-input" placeholder="Email" required>
-                <textarea class="form-input" placeholder="Briefly describe your project" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary" style="width:100%">Send Inquiry</button>
+            <form data-aos="fade-left">
+                <label>Full Name</label>
+                <input type="text" class="form-input" placeholder="e.g. John Doe" required>
+                <label>Email Address</label>
+                <input type="email" class="form-input" placeholder="john@example.com" required>
+                <label>Project Narrative</label>
+                <textarea class="form-input" placeholder="Tell us about your space" rows="2"></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>© 2026 Denni’s Cabinets LLC. Norcross, GA.</p>
-            <div style="display:flex; gap:20px">
-                <a href="#" style="color:black"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="color:black"><i class="fab fa-facebook"></i></a>
+        <div class="footer-inner">
+            <p>© 2026 Denni’s Cabinets LLC. Norcross, Georgia.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
@@ -308,7 +262,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 1000, once: true });
 
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
@@ -319,7 +273,7 @@
             const btn = document.getElementById('toggleBtn');
             if (extra.style.display === "grid") {
                 extra.style.display = "none";
-                btn.innerText = "Browse Full Library";
+                btn.innerText = "View Full Collection";
             } else {
                 extra.style.display = "grid";
                 btn.innerText = "Show Less";
