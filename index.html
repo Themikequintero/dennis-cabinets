@@ -72,11 +72,11 @@ nav.sc .hbg span{background:var(--text)}
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1596205250168-c3583813eea0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;transform:scale(1.08);animation:hzoom 14s var(--ease) forwards}
 @keyframes hzoom{to{transform:scale(1)}}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.42) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.68) 100%)}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.75) 100%)}
 .hero-body{position:relative;z-index:2;padding:0 56px 88px;max-width:860px}
 .h-eye{display:inline-flex;align-items:center;gap:14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;opacity:0;animation:fup 1s .4s var(--ease) forwards}
 .h-eye::before{content:'';width:28px;height:1px;background:var(--accent)}
-.hero h1{font-family:var(--fd);font-size:clamp(4rem,10vw,9rem);font-weight:300;line-height:.92;letter-spacing:-.03em;color:#fff;margin-bottom:32px;opacity:0;animation:fup 1.2s .6s var(--ease) forwards}
+.hero h1{font-family:var(--fd);font-size:clamp(4rem,10vw,9rem);font-weight:300;line-height:.92;letter-spacing:-.03em;color:#fff;margin-bottom:32px;opacity:0;animation:fup 1.2s .6s var(--ease) forwards;text-shadow:0 2px 20px rgba(0,0,0,.4)}
 .hero h1 em{font-style:italic;color:#ffffff}
 .hero-desc{font-size:.98rem;line-height:1.72;color:rgba(255,255,255,.7);max-width:460px;font-weight:300;margin-bottom:40px;opacity:0;animation:fup 1s .8s var(--ease) forwards}
 .hero-acts{display:flex;align-items:center;gap:24px;flex-wrap:wrap;opacity:0;animation:fup 1s 1s var(--ease) forwards}
